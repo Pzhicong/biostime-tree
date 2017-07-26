@@ -44,9 +44,9 @@ import { Observable } from 'rxjs/Rx';
 
       <node-menu *ngIf="isRightMenuVisible" (menuItemSelected)="onMenuItemSelected($event)"></node-menu>
 
-      <template [ngIf]="tree.isNodeExpanded()">
+      <ng-template [ngIf]="tree.isNodeExpanded()">
         <tree-internal *ngFor="let child of tree.childrenAsync | async" [tree]="child"></tree-internal>
-      </template>
+      </ng-template>
     </li>
   </ul>
   `
