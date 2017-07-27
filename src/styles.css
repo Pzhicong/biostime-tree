@@ -55,7 +55,7 @@
 }
 
 tree-internal ul {
-  padding: 3px 0 3px 25px;
+  padding: 3px 0 3px 5px;
 }
 
 tree-internal li {
@@ -79,6 +79,7 @@ tree-internal .tree {
 tree-internal .tree li {
   list-style: none;
   cursor: default;
+  /* margin-left: 25px; */
 }
 
 tree-internal .tree li div {
@@ -90,15 +91,19 @@ tree-internal .tree .node-value {
   display: inline-block;
   color: #212121;
 }
+tree-internal .tree .node-value:hover {
+  cursor:pointer;
+  color:#ef7d30;
+}
 
 tree-internal .tree .node-value:after {
-  display: block;
+   /* display: block;
   padding-top: -3px;
   width: 0;
   height: 2px;
   background-color: #212121;
   content: '';
-  transition: width 0.3s;
+  transition: width 0.3s;  */
 }
 
 tree-internal .tree .node-value:hover:after {
@@ -164,8 +169,8 @@ tree-internal .tree .folding.node-leaf {
 }
 
 tree-internal .tree .folding.node-leaf:before {
-  content: '\25CF';
-  color: #757575;
+   /* content: '\25CF';
+  color: #757575;  */
 }
 
 tree-internal ul.rootless {
@@ -200,3 +205,13 @@ tree-internal .loading-children:after {
 }
 
 
+ .value-container{
+  white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+} 
+
+.node-leaf~.node-selected .node-name{
+  color:#ef7d30;
+}

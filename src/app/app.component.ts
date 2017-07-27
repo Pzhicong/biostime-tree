@@ -3,65 +3,19 @@ import { NodeEvent, TreeModel, RenamableNode, Ng2TreeSettings } from './componen
 
 @Component({
   selector: 'app-root',
-  template: `
-    <div class="tree-demo-app">
-    <div class="tree-container">
-        <p class="tree-title">分销平台树</p>
-        <p class="notice">异步加载</p>
-        <tree
-          [tree]="pls"
-          [settings]="settings"
-          (nodeRemoved)="onNodeRemoved($event)"
-          (nodeRenamed)="onNodeRenamed($event)"
-          (nodeSelected)="onNodeSelected($event)"
-          (nodeMoved)="onNodeMoved($event)"
-          (nodeCreated)="onNodeCreated($event)">
-        </tree>
-      </div>
-
-      <div class="tree-container">
-        <p class="tree-title">营销通后台</p>
-        <p class="notice">有树根、子叶异步加载</p>
-        <tree
-          [tree]="fonts"
-          (nodeRemoved)="onNodeRemoved($event)"
-          (nodeRenamed)="onNodeRenamed($event)"
-          (nodeSelected)="onNodeSelected($event)"
-          (nodeMoved)="onNodeMoved($event)"
-          (nodeCreated)="onNodeCreated($event)"
-          (nodeExpanded)="onNodeExpanded($event)"
-          (nodeCollapsed)="onNodeCollapsed($event)">
-        </tree>
-      </div>
-      
-      <div class="tree-container">
-        <p class="tree-title">分销平台（目录/文件结构）</p>
-        <p class="notice">高级配置（添加awesome图标）</p>
-        <tree
-          [tree]="dfs"
-          (nodeRemoved)="onNodeRemoved($event)"
-          (nodeRenamed)="onNodeRenamed($event)"
-          (nodeSelected)="onNodeSelected($event)"
-          (nodeMoved)="onNodeMoved($event)"
-          (nodeCreated)="onNodeCreated($event)"
-          (nodeExpanded)="onNodeExpanded($event)"
-          (nodeCollapsed)="onNodeCollapsed($event)">
-        </tree>
-      </div>
-    </div>
-  `,
+  templateUrl: 'app.component.html',
   styles: [`
     .tree-demo-app {
-      margin: auto;
-      width: -moz-fit-content;
-      width: -webkit-fit-content;
-      width: fit-content;
+      // margin: auto;
+      // width: -moz-fit-content;
+      // width: -webkit-fit-content;
+      // width: fit-content;
     }
 
     .tree-demo-app .tree-container {
       float: left;
       vertical-align: top;
-      width: 500px;
+      width: 250px;
     }
 
     .tree-title {
@@ -324,6 +278,7 @@ export class AppComponent {
   private static logEvent(e: NodeEvent, message: string): void {
     console.log(e);
     console.log(`${message}:${e.node.value}`);
+    alert(e.node.value);
   }
 
   public ngOnInit(): void {
@@ -374,7 +329,7 @@ export class AppComponent {
           }
         ]
       };
-    }, 2000);
+    }, 500);
   }
 
   public onNodeRemoved(e: NodeEvent): void {

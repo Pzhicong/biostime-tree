@@ -75,6 +75,7 @@ export class TreeModelSettings {
   public rightMenu?: boolean;
 
   /**
+   * 当static属性为true，拖拽、右键菜单功能不可用
    * "static" property when set to true makes it impossible to drag'n'drop tree or call a menu on it.
    * @name TreeModelSettings#static
    * @type boolean
@@ -89,6 +90,7 @@ export class TreeModelSettings {
 
 export interface Ng2TreeSettings {
   /**
+   * 树根是否可见
    * Indicates root visibility in the tree. When true - root is invisible.
    * @name Ng2TreeSettings#rootIsVisible
    * @type boolean
@@ -110,6 +112,7 @@ export interface RenamableNode {
   setName(name: string): void;
 
   /**
+   * 得到节点的字符串表示形式。此方法的实现取决于用户。
    * Get string representation of the node. Implementation of this method is up to user.
    * @returns {string} - A node string representation.
    */

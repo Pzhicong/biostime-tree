@@ -6,7 +6,7 @@ import { Tree } from './tree';
 
 @Component({
   selector: 'tree',
-  template: `<tree-internal [tree]="tree" [settings]="settings"></tree-internal>`,
+  template: `<div style="background: #c7d1df;padding-left:40px;"><tree-internal [tree]="tree" [settings]="settings"></tree-internal></div>`,
   providers: [TreeService]
 })
 export class TreeComponent implements OnInit, OnChanges {
@@ -55,6 +55,7 @@ export class TreeComponent implements OnInit, OnChanges {
   }
 
   public ngOnInit(): void {
+    // console.log(this.tree);
     this.treeService.nodeRemoved$.subscribe((e: NodeEvent) => {
       this.nodeRemoved.emit(e);
     });

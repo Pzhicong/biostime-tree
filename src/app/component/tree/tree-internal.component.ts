@@ -68,6 +68,8 @@ export class TreeInternalComponent implements OnInit {
   }
 
   public ngOnInit(): void {
+    // console.dir(this.tree);
+    // tree.isNodeExpanded()
     this.settings = this.settings || { rootIsVisible: true };
 
     this.nodeMenuService.hideMenuStream(this.element)

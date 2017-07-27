@@ -314,6 +314,7 @@ export class Tree {
   }
 
   /**
+   * 检查是否为树根（父亲节点为null）
    * Check whether this tree is a root or not. The root is the tree (node) that doesn't have parent (or technically its parent is null).
    * @returns {boolean} A flag indicating whether or not this tree is the root.
    */
