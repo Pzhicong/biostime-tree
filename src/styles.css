@@ -139,7 +139,10 @@ tree-internal .tree .folding.node-collapsed {
 
 tree-internal .tree .folding.node-collapsed:before {
   content: '\25B6';
-  color: #757575;
+   color: #757575; 
+  font-size: 24px;
+  position: relative;
+  top: 2px;
 }
 
 tree-internal .tree .folding.node-expanded {
@@ -148,7 +151,8 @@ tree-internal .tree .folding.node-expanded {
 
 tree-internal .tree .folding.node-expanded:before {
   content: '\25BC';
-  color: #757575;
+  color:#ef7d30;
+  /* color: #757575; */
 }
 
 tree-internal .tree .folding.node-empty {
@@ -214,4 +218,10 @@ tree-internal .loading-children:after {
 
 .node-leaf~.node-selected .node-name{
   color:#ef7d30;
+}
+
+.value-container.rootless~ tree-internal>ul{
+    background:white;
+    margin-bottom: 10px;
+    border-radius:5px;
 }

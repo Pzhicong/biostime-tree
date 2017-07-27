@@ -6,7 +6,7 @@ import { Tree } from './tree';
 
 @Component({
   selector: 'tree',
-  template: `<div style="background: #c7d1df;padding-left:40px;"><tree-internal [tree]="tree" [settings]="settings"></tree-internal></div>`,
+  template: `<div style="background: #c7d1df;padding:10px 20px;"><tree-internal [tree]="tree" [settings]="settings"></tree-internal></div>`,
   providers: [TreeService]
 })
 export class TreeComponent implements OnInit, OnChanges {
