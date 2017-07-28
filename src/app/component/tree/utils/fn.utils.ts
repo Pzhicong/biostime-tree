@@ -22,10 +22,11 @@ export function isFunction(value: any) {
   return typeof value === 'function';
 }
 
+//expect return value[path]
 export function get(value: any, path: string, defaultValue?: any) {
   let result = value;
-
   for (const prop of path.split('.')) {
+    // Reflect.has(用于检查一个对象是否拥有某个属性， 相当于in 操作符 
     if (!result || !Reflect.has(result, prop)) {
       return defaultValue;
     }
@@ -36,6 +37,7 @@ export function get(value: any, path: string, defaultValue?: any) {
   return isNil(result) || result === value ? defaultValue : result;
 }
 
+//剔除对象里proToSkip属性
 export function omit(value: any, propToSkip: string): any {
   return Object
     .keys(value)
