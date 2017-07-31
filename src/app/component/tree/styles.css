@@ -52,73 +52,78 @@
   margin-left: 5px;
 }
 
-tree-internal ul {
-  padding: 3px 0 3px 25px;
+.tree-container {
+  padding: 3px 0 3px 5px;
 }
 
-tree-internal li {
+.tree-container li {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-tree-internal .over-drop-target {
+.tree-container .over-drop-target {
   border: 4px solid #757575;
   transition: padding 0.2s ease-out;
   padding: 5px;
   border-radius: 5%;
 }
 
-tree-internal .tree {
+.tree-container{
   box-sizing: border-box;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-tree-internal .tree li {
+.tree-container  li {
   list-style: none;
   cursor: default;
+  /* margin-left: 25px; */
 }
 
-tree-internal .tree li div {
+.tree-container  li div {
   display: inline-block;
   box-sizing: border-box;
 }
 
-tree-internal .tree .node-value {
+.tree-container .node-value {
   display: inline-block;
   color: #212121;
 }
+.tree-container .node-value:hover {
+  cursor:pointer;
+  color:#ef7d30;
+}
 
-tree-internal .tree .node-value:after {
-  display: block;
+.tree-container .node-value:after {
+   /* display: block;
   padding-top: -3px;
   width: 0;
   height: 2px;
   background-color: #212121;
   content: '';
-  transition: width 0.3s;
+  transition: width 0.3s;  */
 }
 
-tree-internal .tree .node-value:hover:after {
+.tree-container .node-value:hover:after {
   width: 100%;
 }
 
-tree-internal .tree .node-left-menu {
+.tree-container .node-left-menu {
   display: inline-block;
   height: 100%;
   width: auto;
 }
 
-tree-internal .tree .node-left-menu span:before {
+.tree-container .node-left-menu span:before {
   content: '\2026';
   color: #757575;
 }
 
-tree-internal .tree .node-selected:after {
+.tree-container .node-selected:after {
   width: 100%;
 }
 
-tree-internal .tree .folding {
+.tree-container .folding {
   width: 25px;
   display: inline-block;
   line-height: 1px;
@@ -126,55 +131,62 @@ tree-internal .tree .folding {
   font-weight: bold;
 }
 
-tree-internal .tree .folding.node-collapsed {
+.tree-container .folding.node-collapsed {
   cursor: pointer;
 }
 
-tree-internal .tree .folding.node-collapsed:before {
+.tree-container .folding.node-collapsed:before {
   content: '\25B6';
-  color: #757575;
+   color: #757575; 
+  font-size: 24px;
+  position: relative;
+  top: 2px;
 }
 
-tree-internal .tree .folding.node-expanded {
+.tree-container .folding.node-expanded {
   cursor: pointer;
 }
 
-tree-internal .tree .folding.node-expanded:before {
+.tree-container .folding.node-expanded:before {
   content: '\25BC';
-  color: #757575;
+  color:#ef7d30;
+  /* color: #757575; */
 }
 
-tree-internal .tree .folding.node-empty {
+.tree-container .folding.node-empty {
   color: #212121;
   text-align: center;
   font-size: 0.89em;
 }
 
-tree-internal .tree .folding.node-empty:before {
+.tree-container .folding.node-empty:before {
   content: '\25B6';
   color: #757575;
+  font-size: 24px;
+  position: relative;
+  top: 2px;
 }
 
-tree-internal .tree .folding.node-leaf {
+.tree-container .folding.node-leaf {
   color: #212121;
   text-align: center;
   font-size: 0.89em;
 }
 
-tree-internal .tree .folding.node-leaf:before {
-  content: '\25CF';
-  color: #757575;
+.tree-container .folding.node-leaf:before {
+   /* content: '\25CF';
+  color: #757575;  */
 }
 
-tree-internal ul.rootless {
+.tree-container ul.rootless {
   padding: 0;
 }
 
-tree-internal div.rootless {
+.tree-container div.rootless {
   display: none !important;
 }
 
-tree-internal .loading-children:after {
+.tree-container .loading-children:after {
   content: ' loading ...';
   color: #6a1b9a;
   font-style: italic;
@@ -198,4 +210,19 @@ tree-internal .loading-children:after {
 }
 
 
+ .value-container{
+  white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+} 
 
+.node-leaf~.node-selected .node-name{
+  color:#ef7d30;
+}
+
+.value-container.rootless~ .tree-container>ul{
+    background:white;
+    margin-bottom: 10px;
+    border-radius:5px;
+}

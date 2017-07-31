@@ -278,7 +278,7 @@ export class AppComponent {
   private static logEvent(e: NodeEvent, message: string): void {
     console.log(e);
     console.log(`${message}:${e.node.value}`);
-    alert(e.node.value);
+    // alert(e.node.value);
   }
 
   public ngOnInit(): void {

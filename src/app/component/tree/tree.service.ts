@@ -26,6 +26,33 @@ export class TreeService {
 
   public constructor(@Inject(NodeDraggableService) private nodeDraggableService: NodeDraggableService) {
     this.nodeRemoved$.subscribe((e: NodeRemovedEvent) => e.node.removeItselfFromParent());
+    // var clicks = Observable.fromEvent(document, 'click');
+    // clicks.subscribe(x => console.log(x));
+    // 
+
+    // var observable = Observable.interval(1000);
+    // observable.subscribe(x => console.log('A' +x));
+    // observable.subscribe(x => console.log('B' +x));
+
+    // var foo = Observable.create((observer) => {
+    //   var i = 0
+    //   setInterval(() => {
+    //     observer.next(i++)
+    //     console.log('hello')
+    //   }, 1000)
+    // })
+    // const subcription = foo.subscribe((i) => console.log(i))
+
+    // var subject = new Subject();
+    // subject.subscribe({
+    //   next: (v) => console.log('observerA: ' + v)
+    // });
+    // subject.subscribe({
+    //   next: (v) => console.log('observerB: ' + v)
+    // });
+    // // var observable = Observable.from([1, 2, 3]);
+    // var observable = Observable.interval(1000);
+    // observable.subscribe(subject);
   }
 
   public unselectStream(tree: Tree): Observable<any> {

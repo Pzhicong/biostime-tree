@@ -48,11 +48,11 @@ export class TreeComponent implements OnInit, OnChanges {
 
   // 当被绑定的输入属性的值发生变化时调用，首次调用一定会发生在 ngOnInit之前。
   public ngOnChanges(changes: SimpleChanges): void {
-    console.dir(changes);
+    // console.dir(changes);
     // console.warn('ngOnChanges');
     if (!this.treeModel) {
       //异步加载
-      console.error('第一次执行');
+      // console.error('第一次执行');
       this.tree = TreeComponent.EMPTY_TREE;
     } else {
       this.tree = new Tree(this.treeModel);

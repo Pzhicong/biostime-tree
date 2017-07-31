@@ -12,7 +12,7 @@ import { Observable } from 'rxjs/Rx';
 @Component({
   selector: 'tree-internal',
   template: `
-  <ul class="tree" *ngIf="tree" [ngClass]="{rootless: isRootHidden()}">
+  <ul class="tree tree-container" *ngIf="tree" [ngClass]="{rootless: isRootHidden()}">
     <li>
       <div class="value-container"
         [ngClass]="{rootless: isRootHidden()}"
@@ -49,7 +49,8 @@ import { Observable } from 'rxjs/Rx';
       </ng-template>
     </li>
   </ul>
-  `
+  `,
+  styleUrls: ['styles.css']
 })
 export class TreeInternalComponent implements OnInit {
   @Input()
