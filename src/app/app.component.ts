@@ -15,7 +15,7 @@ import { NodeEvent, TreeModel, RenamableNode, Ng2TreeSettings } from './componen
     .tree-demo-app .tree-container {
       float: left;
       vertical-align: top;
-      width: 250px;
+      width: 300px;
     }
 
     .tree-title {
@@ -353,10 +353,10 @@ export class AppComponent {
   }
 
   public onNodeExpanded(e: NodeEvent): void {
-    AppComponent.logEvent(e, 'Expanded');
+    // AppComponent.logEvent(e, 'Expanded');
   }
 
   public onNodeCollapsed(e: NodeEvent): void {
-    AppComponent.logEvent(e, 'Collapsed');
+    // AppComponent.logEvent(e, 'Collapsed');
   }
 }

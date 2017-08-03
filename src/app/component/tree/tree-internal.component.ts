@@ -26,7 +26,7 @@ import { Observable } from 'rxjs/Rx';
           [class.node-selected]="isSelected"
           (click)="onNodeSelected($event)">
             <div *ngIf="tree.nodeTemplate" class="node-template" [innerHTML]="tree.nodeTemplate | safeHtml"></div>
-            <span class="node-name" [innerHTML]="tree.value | safeHtml"></span>
+            <span class="node-name" (click)="onSwitchFoldingType()" [innerHTML]="tree.value | safeHtml"></span>
             <span class="loading-children" *ngIf="tree.childrenAreBeingLoaded()"></span>
         </div>
 
@@ -49,8 +49,7 @@ import { Observable } from 'rxjs/Rx';
       </ng-template>
     </li>
   </ul>
-  `,
-  styleUrls: ['styles.css']
+  `
 })
 export class TreeInternalComponent implements OnInit {
   @Input()
@@ -69,8 +68,8 @@ export class TreeInternalComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    // console.dir(this.tree);
-    this.settings = this.settings || { rootIsVisible: true };
+    console.dir(this.tree);
+    this.settings = this.settings || { rootIsVisible: false };
 
     this.nodeMenuService.hideMenuStream(this.element)
       .subscribe(() => {
@@ -208,5 +207,12 @@ export class TreeInternalComponent implements OnInit {
 
   public isRootHidden(): boolean {
     return this.tree.isRoot() && !this.settings.rootIsVisible;
+  }
+
+  public getfoldingClass(): string {
+    if (!this.tree.parent) {
+      return 'node-expanding';
+    } 
+    return 'node-expanded';
   }
 }

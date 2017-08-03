@@ -60,7 +60,7 @@ export class TreeComponent implements OnInit, OnChanges {
   }
 
   public ngOnInit(): void {
-    console.warn('ngOnInit');
+    // console.warn('ngOnInit');
     // console.log(this.tree);
     this.treeService.nodeRemoved$.subscribe((e: NodeEvent) => {
       this.nodeRemoved.emit(e);

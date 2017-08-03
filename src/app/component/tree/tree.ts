@@ -403,7 +403,7 @@ export class Tree {
   private _setFoldingType(): void {
     if (this.childrenShouldBeLoaded()) {
       this.node._foldingType = FoldingType.Collapsed;
-    } else if (this._children && !isEmpty(this._children)) {
+    } else if (this._children && !isEmpty(this._children) && !this.parent) {
       this.node._foldingType = FoldingType.Expanded;
     } else if (Array.isArray(this._children)) {
       this.node._foldingType = FoldingType.Empty;
